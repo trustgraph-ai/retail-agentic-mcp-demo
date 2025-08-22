@@ -43,7 +43,7 @@ pip3 install mcp
 ```
 
 To launch the MCP server:
-```python
+```
 python3 retail_MCP_server.py
 ```
 
