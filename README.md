@@ -51,7 +51,7 @@ You will need to leave the MCP server terminal window open. Open a new terminal 
 
 ## Configure the MCP and Agent Tools
 
-The MCP and Agent tools can be configured manually through the Workbench. However, this is also a script that will configure all tools automatically. To launch the script:
+The MCP and Agent tools can be configured manually through the Workbench. However, there is a script that will configure all tools automatically. To launch the script:
 ```bash
 bash retail_mcp_setup.sh
 ```
