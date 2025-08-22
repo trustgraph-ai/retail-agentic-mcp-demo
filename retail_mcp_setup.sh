@@ -16,9 +16,6 @@ tg-set-mcp-tool --id get_stock_level \
 tg-set-mcp-tool --id get_order_status \
   --tool-url "http://host.docker.internal:9870/mcp"
 
-tg-set-mcp-tool --id get_customer_details \
-  --tool-url "http://host.docker.internal:9870/mcp"
-
 # Verify MCP tools are configured
 echo "Verifying MCP tool configuration..."
 tg-show-mcp-tools
@@ -40,12 +37,6 @@ tg-set-tool --id check_order_status \
   --type mcp-tool --mcp-tool get_order_status \
   --description "Use this to get the status of a customer's order by its ID." \
   --argument 'order_id:string:Order ID'
-
-tg-set-tool --id get_customer_details \
-  --name "get_customer_details" \
-  --type mcp-tool --mcp-tool get_customer_details \
-  --description "Use this to retrieve customer information like name and loyalty status using their customer ID." \
-  --argument 'customer_id:string:Customer ID'
 
 tg-set-tool --id product-query \
   --name "product-query" \
