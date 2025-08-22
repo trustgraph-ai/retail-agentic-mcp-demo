@@ -56,6 +56,12 @@ The MCP and Agent tools can be configured manually through the Workbench. Howeve
 bash retail_mcp_setup.sh
 ```
 
+Under `MCP Tools` you should see:
+![MCP Tools](screenshots/mcp_config.png)
+
+Under `Agent Tools` you should see:
+![Agent Tools](screenshots/tools_config.png)
+
 ## Test the Agent
 
 The Agentic flow can be used from the `Agent` chat in the Workbench or the CLI. Below is a question that will test all aspects of the demo:
