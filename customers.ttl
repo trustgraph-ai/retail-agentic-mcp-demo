@@ -1,0 +1,43 @@
+@prefix customer: <http://example.com/customers/> .
+@prefix order: <http://example.com/orders/> .
+@prefix ex: <http://example.com/ns/> .
+@prefix schema: <http://schema.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- Customer Records ---
+
+customer:CUST-001
+    a foaf:Person ;
+    foaf:name "Alice Johnson" ;
+    rdfs:label "Alice Johnson" ;
+    schema:email "alice.j@example.com" ;
+    schema:telephone "+1-555-0101" ;
+    ex:customerID "CUST-001" ;
+    ex:loyaltyMember "true"^^xsd:boolean ;
+    ex:hasAddress [
+        a schema:PostalAddress ;
+        schema:streetAddress "123 Maple St" ;
+        schema:addressLocality "Seattle" ;
+        schema:addressRegion "WA" ;
+        schema:postalCode "98101"
+    ] ;
+    ex:hasOrder order:ORD-99887 .
+
+customer:CUST-002
+    a foaf:Person ;
+    foaf:name "Bob Williams" ;
+    rdfs:label "Bob Williams" ;
+    schema:email "bob.w@example.com" ;
+    ex:customerID "CUST-002" ;
+    ex:loyaltyMember "false"^^xsd:boolean ;
+    ex:hasOrder order:ORD-12345, order:ORD-54321 .
+
+customer:CUST-003
+    a foaf:Person ;
+    foaf:name "Charlie Brown" ;
+    rdfs:label "Charlie Brown" ;
+    schema:email "charlie.b@example.com" ;
+    ex:customerID "CUST-003" ;
+    ex:loyaltyMember "true"^^xsd:boolean .

@@ -1,0 +1,97 @@
+@prefix product: <http://example.com/products/> .
+@prefix ex: <http://example.com/ns/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- Tents ---
+product:TrailSeekerPro
+    a schema:Product ;
+    rdfs:label "TrailSeeker Pro" ;
+    schema:name "TrailSeeker Pro" ;
+    schema:description "A durable, 4-season tent for serious adventurers." ;
+    schema:sku "TENT-TSP-4P" ;
+    schema:brand "AdventureRidge" ;
+    schema:category "Tents" ;
+    schema:capacity "4"^^xsd:integer ;
+    schema:weight "3.5 kg" ;
+    schema:price "349.99"^^xsd:decimal ;
+    ex:suggestedProduct product:NordicWave, product:SummitPack60 .
+
+product:HikerLite
+    a schema:Product ;
+    rdfs:label "HikerLite" ;
+    schema:name "HikerLite" ;
+    schema:description "An ultralight 2-person tent for backpacking." ;
+    schema:sku "TENT-HL-2P" ;
+    schema:brand "FeatherPeak" ;
+    schema:category "Tents" ;
+    schema:capacity "2"^^xsd:integer ;
+    schema:weight "1.2 kg" ;
+    schema:price "279.99"^^xsd:decimal .
+
+# --- Sleeping Bags ---
+product:NordicWave
+    a schema:Product ;
+    rdfs:label "NordicWave Comfort 20" ;
+    schema:name "NordicWave Comfort 20" ;
+    schema:description "A comfortable synthetic sleeping bag rated to 20°F / -6°C." ;
+    schema:sku "SLEEP-NW-20F" ;
+    schema:brand "AdventureRidge" ;
+    schema:category "Sleeping Bags" ;
+    schema:price "189.99"^^xsd:decimal .
+
+# --- Backpacks ---
+product:SummitPack60
+    a schema:Product ;
+    rdfs:label "SummitPack 60L" ;
+    schema:name "SummitPack 60L" ;
+    schema:description "A 60-liter backpack for multi-day hiking trips." ;
+    schema:sku "PACK-SP-60L" ;
+    schema:brand "FeatherPeak" ;
+    schema:category "Backpacks" ;
+    schema:price "220.00"^^xsd:decimal .
+
+# --- Cooking ---
+product:BlazeStove
+    a schema:Product ;
+    rdfs:label "BlazeField Camp Stove" ;
+    schema:name "BlazeField Camp Stove" ;
+    schema:description "A compact and powerful canister stove for quick meals." ;
+    schema:sku "STOVE-BFS-01" ;
+    schema:brand "FireDancer" ;
+    schema:category "Cooking" ;
+    schema:price "65.50"^^xsd:decimal ;
+    ex:isCompatibleWith product:FuelCanister230 .
+
+product:FuelCanister230
+    a schema:Product ;
+    rdfs:label "Iso-Pro Fuel Canister 230g" ;
+    schema:name "Iso-Pro Fuel Canister 230g" ;
+    schema:description "A 230g isobutane-propane fuel canister." ;
+    schema:sku "FUEL-ISO-230" ;
+    schema:brand "FireDancer" ;
+    schema:category "Fuel" ;
+    schema:price "5.99"^^xsd:decimal .
+
+# --- Accessories ---
+product:PhotonHeadlamp
+    a schema:Product ;
+    rdfs:label "Photon Beam Headlamp" ;
+    schema:name "Photon Beam Headlamp" ;
+    schema:description "A bright, 300-lumen waterproof headlamp." ;
+    schema:sku "ACC-PHL-300" ;
+    schema:brand "LightPath" ;
+    schema:category "Accessories" ;
+    schema:price "45.00"^^xsd:decimal ;
+    ex:isAccessoryFor product:TrailSeekerPro, product:HikerLite .
+
+product:PureFlowFilter
+    a schema:Product ;
+    rdfs:label "PureFlow Water Filter" ;
+    schema:name "PureFlow Water Filter" ;
+    schema:description "A lightweight squeeze-style water filter." ;
+    schema:sku "ACC-PWF-01" ;
+    schema:brand "AquaClean" ;
+    schema:category "Accessories" ;
+    schema:price "34.95"^^xsd:decimal .
