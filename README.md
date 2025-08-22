@@ -57,9 +57,11 @@ bash retail_mcp_setup.sh
 ```
 
 Under `MCP Tools` you should see:
+
 ![MCP Tools](screenshots/mcp_config.png)
 
 Under `Agent Tools` you should see:
+
 ![Agent Tools](screenshots/tools_config.png)
 
 ## Test the Agent
