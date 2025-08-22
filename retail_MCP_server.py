@@ -49,22 +49,4 @@ def get_order_status(order_id: str) -> OrderStatus:
     status = mock_orders.get(order_id, {"status": "Not Found", "estimated_delivery": "N/A", "items": []})
     return {"order_id": order_id, "items": status["items"], "status": status["status"], "estimated_delivery": status["estimated_delivery"]}
 
-# --- New Customer Information System (CIS) Tool ---
-@dataclasses.dataclass
-class CustomerInfo:
-    customer_id: str
-    name: str
-    loyalty_member: bool
-    email: str
-
-@mcp.tool()
-def get_customer_details(customer_id: str) -> CustomerInfo:
-    """Returns details for a given customer ID."""
-    mock_customers = {
-        "CUST-001": {"name": "Alice Johnson", "loyalty_member": True, "email": "alice.j@example.com"},
-        "CUST-002": {"name": "Bob Williams", "loyalty_member": False, "email": "bob.w@example.com"},
-    }
-    details = mock_customers.get(customer_id, {"name": "Unknown", "loyalty_member": False, "email": "N/A"})
-    return {"customer_id": customer_id, **details}
-
 mcp.run(transport="streamable-http")
