@@ -60,11 +60,11 @@ bash retail_mcp_setup.sh
 
 The Agentic flow can be used from the `Agent` chat in the Workbench or the CLI. Below is a question that will test all aspects of the demo:
 ```
-I'm Alice Johnson. My order ID is ORD-99887. Can you check my order status, content, arrival date, and email address on file? I also need a 'NordicWave Comfort 20' sleeping bag. Is it in stock in Denver? And what headlamp would you recommend as an accessory for the 'TrailSeeker Pro' tent?
+I'm Alice Johnson. My order ID is ORD-99887. Can you check my order status, content, arrival date, address and email address on file? I also need a 'NordicWave Comfort 20' sleeping bag. Is it in stock in Denver? And what headlamp would you recommend as an accessory for the 'TrailSeeker Pro' tent?
 ```
 
 With the CLI:
 ```bash
-tg-invoke-agent -v -q "I'm Alice Johnson. My order ID is ORD-99887. Can you check my order status, content, arrival date, and email address on file? I also need a 'NordicWave Comfort 20' sleeping bag. Is it in stock in Denver? And what headlamp would you recommend as an accessory for the 'TrailSeeker Pro' tent?"
+tg-invoke-agent -v -q "I'm Alice Johnson. My order ID is ORD-99887. Can you check my order status, content, arrival date, address, and email address on file? I also need a 'NordicWave Comfort 20' sleeping bag. Is it in stock in Denver? And what headlamp would you recommend as an accessory for the 'TrailSeeker Pro' tent?"
 ```
 
