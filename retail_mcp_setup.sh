@@ -38,17 +38,17 @@ tg-set-tool --id check_order_status \
   --description "Use this to get the status of a customer's order by its ID." \
   --argument 'order_id:string:Order ID'
 
-tg-set-tool --id product-query \
-  --name "product-query" \
+tg-set-tool --id product_query \
+  --name "product_query" \
   --type knowledge-query \
   --collection products \
   --description "Query the product catalog for information about the products."
 
- tg-set-tool --id customer-query \
-  --name "customer-query" \
+ tg-set-tool --id customer_query \
+  --name "customer_query" \
   --type knowledge-query \
   --collection customers \
-  --description "Query the customer records."
+  --description "Query the customer records for all information about each customer."
 
 # Verify agent tools are configured
 echo "Verifying agent tool configuration..."
