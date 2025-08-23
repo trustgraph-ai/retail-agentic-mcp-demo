@@ -11,28 +11,28 @@ This demo simulates an architecture that would be representative of a retail sto
 
 Begin with a [TrustGraph deployment](https://docs.trustgraph.ai/deployment/) of your choice.
 
-## Remove Default Agent Tools
-
-On launch, TrustGraph will feature basic agent tools for testing. These can be removed through the Workbench. Open the Workbench at:
-```
-http://localhost:8888
-```
-
-Select `Agent Tools` from the left pane. There will be three default agent tools:
-- knowledge-extraction
-- knowledge-query
-- llm-completion
-
-Click each tool and then hit `Delete`.
-
 ## Download the Files
 
-You can either `clone` this repo or download the 4 necessary files. The files are:
+You can either `clone` this repo or download the 4 necessary demo files. The files are:
 ```
 customers.ttl
 products.ttl
-retail_mcp_setup.sh
+retail_MCP_setup.sh
 retail_MCP_server.py
+```
+
+## Using the Included TrustGraph Config
+
+A configuation of TrustGraph is included in the `trustgraph_config` folder. It uses `Mistral Medium 3.1` and `Docker`. If you would like to use this configuration begin by cloning the repo or downloading the files:
+
+> [!NOTE]
+> The Docker Engine must be running prior to launching TrustGraph. If it is your first time launching TrustGraph, the Docker Engine will need to pull all of the containers from the Docker Hub.
+
+```
+cd trustgraph_config
+export MISTRAL_TOKEN=<your-mistral-token>
+pip3 install trustgraph-cli==1.2.17
+docker compose up -d
 ```
 
 ## Launch the MCP Server
@@ -53,7 +53,7 @@ You will need to leave the MCP server terminal window open. Open a new terminal 
 
 The MCP and Agent tools can be configured manually through the Workbench. However, there is a script that will configure all tools automatically. To launch the script:
 ```bash
-bash retail_mcp_setup.sh
+bash retail_MCP_setup.sh
 ```
 
 Under `MCP Tools` you should see:
