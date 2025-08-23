@@ -76,3 +76,6 @@ With the CLI:
 tg-invoke-agent -v -q "I'm Alice Johnson. My order ID is ORD-99887. Can you check my order status, contents, arrival date, address, and email address on file? I also need a 'NordicWave Comfort 20' sleeping bag. Is it in stock in Denver? And what headlamp would you recommend as an accessory for the 'TrailSeeker Pro' tent?"
 ```
 
+## Data Access Controls
+
+During the load process, the customers records are added to a `customers` collection, and the product catalog is loaded to a `products` collection. The tools that queries for this information are limited to each individual collection. For instance, if you were to delete the `customer_query` agent tool, the agentic flow will no longer have access to the customer records in the `customers.ttl` file. If you re-run the test prompt, you will see a different response, as the agent can no longer find the customer's personal information.
