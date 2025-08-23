@@ -1,5 +1,5 @@
 #!/bin/bash
-# retail_mcp_setup.sh
+# retail_MCP_setup.sh
 
 echo "Loading Customer and Product data..."
 tg-load-knowledge -i customers customers.ttl
@@ -19,6 +19,12 @@ tg-set-mcp-tool --id get_order_status \
 # Verify MCP tools are configured
 echo "Verifying MCP tool configuration..."
 tg-show-mcp-tools
+
+# Remove default agent tools
+echo "Removing default agent tools..."
+tg-delete-tool --id knowledge-query
+tg-delete-tool --id knowledge-extraction
+tg-delete-tool --id llm-completion
 
 # Configure agent tools (the tools agents can use)
 echo "Configuring agent tools..."
@@ -48,11 +54,10 @@ tg-set-tool --id product_query \
   --name "customer_query" \
   --type knowledge-query \
   --collection customers \
-  --description "Query the customer records for all information about each customer."
+  --description "Query the customer records."
 
 # Verify agent tools are configured
 echo "Verifying agent tool configuration..."
 tg-show-tools
 
-echo "MCP setup complete!"
-
+echo "Demo setup complete!"
