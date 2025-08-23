@@ -7,6 +7,8 @@ This demo simulates an architecture that would be representative of a retail sto
 - MCP server for store inventory
 - Agentic Tools configuration
 
+[![Agentic MCP Demo](https://img.youtube.com/vi/mUCL1b1lmbA/maxresdefault.jpg)](https://www.youtube.com/watch?v=mUCL1b1lmbA)
+
 ## Deploy TrustGraph
 
 Begin with a [TrustGraph deployment](https://docs.trustgraph.ai/deployment/) of your choice.
