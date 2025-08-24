@@ -2,8 +2,12 @@
 # retail_MCP_setup.sh
 
 echo "Loading Customer and Product data..."
-tg-load-knowledge -i customers customers.ttl
-tg-load-knowledge -i products products.ttl
+tg-load-knowledge -i urn:customers1 \
+  -C customers \
+  customers.ttl
+tg-load-knowledge -i urn:products1 \
+  -C products \
+  products.ttl
 echo "Data loading complete!"
 
 echo "Setting up MCP tools.."
