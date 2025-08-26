@@ -764,7 +764,7 @@ services:
     - -t
     - '0.300'
     - -m
-    - mistral-large-latest
+    - mistral-medium-2508
     - --log-level
     - DEBUG
     deploy:
@@ -791,7 +791,7 @@ services:
     - -t
     - '0.300'
     - -m
-    - mistral-large-latest
+    - mistral-medium-2508
     - --log-level
     - DEBUG
     deploy:
