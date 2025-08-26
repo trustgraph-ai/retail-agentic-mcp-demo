@@ -33,7 +33,7 @@ A configuation of TrustGraph is included in the `trustgraph_config` folder. It u
 ```
 cd trustgraph_config
 export MISTRAL_TOKEN=<your-mistral-token>
-pip3 install trustgraph-cli==1.2.17
+pip3 install trustgraph-cli==1.2.19
 docker compose up -d
 ```
 
