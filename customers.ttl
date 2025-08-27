@@ -16,13 +16,7 @@ customer:CUST-001
     schema:telephone "+1-555-0101" ;
     ex:customerID "CUST-001" ;
     ex:loyaltyMember "true"^^xsd:boolean ;
-    ex:hasAddress [
-        a schema:PostalAddress ;
-        schema:streetAddress "123 Maple St" ;
-        schema:addressLocality "Seattle" ;
-        schema:addressRegion "WA" ;
-        schema:postalCode "98101"
-    ] ;
+    ex:hasAddress address:ADDR-001 ;
     ex:hasOrder order:ORD-99887 .
 
 customer:CUST-002
@@ -41,3 +35,11 @@ customer:CUST-003
     schema:email "charlie.b@example.com" ;
     ex:customerID "CUST-003" ;
     ex:loyaltyMember "true"^^xsd:boolean .
+
+# --- Address Records ---
+address:ADDR-001
+    a schema:PostalAddress ;
+    schema:streetAddress "123 Maple St" ;
+    schema:addressLocality "Seattle" ;
+    schema:addressRegion "WA" ;
+    schema:postalCode "98101" .
