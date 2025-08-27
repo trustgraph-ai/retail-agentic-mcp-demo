@@ -84,6 +84,8 @@ During the load process, the customers records are added to a `customers` collec
 
 ## Knowledge Cores and Flows
 
+[![Context Management](https://img.youtube.com/vi/309VeUf7Ny0/maxresdefault.jpg)](https://www.youtube.com/watch?v=309VeUf7Ny0)
+
 The first command in the config script creates a new flow with the id `create-cores` using a flow class that includes knowledge core creation:
 
 ```
