@@ -161,6 +161,6 @@ tg-put-kg-core --id urn:products1 -i urn-products1.core
 
 # To make the knowledge cores live within a collection
 
-tg-load-kg-core -i urn:customers1 --collection customers
-tg-load-kg-core -i urn:products1 --collection products
+tg-load-kg-core --id urn:customers1 --collection customers
+tg-load-kg-core --id urn:products1 --collection products
 ```
