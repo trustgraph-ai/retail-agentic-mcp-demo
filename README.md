@@ -108,3 +108,43 @@ tg-load-knowledge -i urn:products1 \
 ```
 
 Not only are the customer records and product catalog loaded into the graph under two separate collections, but now they will generate knowledge cores which can be downloaded for future re-use.
+
+## Testing the Collections
+
+To demonstrate that access is limited to a specified collection, use the following GraphRAG test:
+
+```
+tg-invoke-graph-rag -C customers -q "Tell me about Alice Johnson."
+```
+
+Because this request includes the `customers` collection, it should return:
+
+```
+Based on the provided knowledge statements, here is the information about **Alice Johnson**:
+
+- **Name**: Alice Johnson
+- **Type**: `http://xmlns.com/foaf/0.1/Person` (Person)
+- **Customer ID**: CUST-001
+- **Loyalty Member**: `true`
+- **Contact Information**:
+  - Email: `alice.j@example.com`
+  - Telephone: `+1-555-0101`
+- **Address**:
+  - Street: `123 Maple St`
+  - Locality: `Seattle`
+  - Region: `WA`
+  - Postal Code: `98101`
+- **Orders**: Has one order with ID `http://example.com/orders/ORD-99887`.
+```
+
+Now, change the collection:
+
+```
+tg-invoke-graph-rag -C products -q "Tell me about Alice Johnson."
+```
+
+Since there is no information about Alice Johnson in the product catalog, it will return:
+
+```
+I cannot provide any information about **Alice Johnson** because this name does not appear in the provided set of knowledge statements.
+```
