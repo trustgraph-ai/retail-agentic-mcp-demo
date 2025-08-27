@@ -88,21 +88,21 @@ The first command in the config script creates a new flow with the id `create-co
 
 ```
 tg-start-flow \
-  -n "document-rag+graph-rag+kgcore" \
-  -i "create-cores" \
-  -d "Create knowledge cores on ingest"
+  -n "document-rag+graph-rag+kgcore" \ # Flow Class
+  -i "create-cores" \ # Flow ID
+  -d "Create knowledge cores on ingest" # Flow Description
 ```
 
 When a knowledge set is loaded, in this case `customers.ttl` and `products.ttl`, not only are they loaded into indvidual collections but also connected to the `create-cores` flow by adding the `-f` option.
 
 ```
 tg-load-knowledge -i urn:customers1 \
-  -f create-cores \ #
+  -f create-cores \ # Flow that will generate knowledge core
   -C customers \
   customers.ttl
 
 tg-load-knowledge -i urn:products1 \
-  -f create-cores \
+  -f create-cores \ # Flow that will generate knowledge core
   -C products \
   products.ttl
 ```
