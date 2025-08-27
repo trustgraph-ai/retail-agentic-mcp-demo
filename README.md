@@ -81,3 +81,30 @@ tg-invoke-agent -v -q "I'm Alice Johnson. My order ID is ORD-99887. Can you chec
 ## Data Access Controls
 
 During the load process, the customers records are added to a `customers` collection, and the product catalog is loaded to a `products` collection. The tools that queries for this information are limited to each individual collection. For instance, if you were to delete the `customer_query` agent tool, the agentic flow will no longer have access to the customer records in the `customers.ttl` file. If you re-run the test prompt, you will see a different response, as the agent can no longer find the customer's personal information.
+
+## Knowledge Cores and Flows
+
+The first command in the config script creates a new flow with the id `create-cores` using a flow class that includes knowledge core creation:
+
+```
+tg-start-flow \
+  -n "document-rag+graph-rag+kgcore" \
+  -i "create-cores" \
+  -d "Create knowledge cores on ingest"
+```
+
+When a knowledge set is loaded, in this case `customers.ttl` and `products.ttl`, not only are they loaded into indvidual collections but also connected to the `create-cores` flow by adding the `-f` option.
+
+```
+tg-load-knowledge -i urn:customers1 \
+  -f create-cores \ #
+  -C customers \
+  customers.ttl
+
+tg-load-knowledge -i urn:products1 \
+  -f create-cores \
+  -C products \
+  products.ttl
+```
+
+Not only are the customer records and product catalog loaded into the graph under two separate collections, but now they will generate knowledge cores which can be downloaded for future re-use.
