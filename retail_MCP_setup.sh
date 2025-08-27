@@ -1,11 +1,19 @@
 #!/bin/bash
 # retail_MCP_setup.sh
 
+echo "Create new Flow..."
+tg-start-flow \
+  -n "document-rag+graph-rag+kgcore" \
+  -i "create-cores" \
+  -d "Create knowledge cores on ingest"
+
 echo "Loading Customer and Product data..."
 tg-load-knowledge -i urn:customers1 \
+  -f create-cores \
   -C customers \
   customers.ttl
 tg-load-knowledge -i urn:products1 \
+  -f create-cores \
   -C products \
   products.ttl
 echo "Data loading complete!"
