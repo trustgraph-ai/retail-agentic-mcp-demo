@@ -148,3 +148,19 @@ Since there is no information about Alice Johnson in the product catalog, it wil
 ```
 I cannot provide any information about **Alice Johnson** because this name does not appear in the provided set of knowledge statements.
 ```
+
+## Loading Data Directly from Knowledge Cores
+
+The customer records and prodcut catalog are also available as knowledge cores in the `knowledge_cores` folder. Loading knowledge cores is a two step process. The first step stages the knowledge cores in the system. The second step makes the knowledge cores live in the system in a particular collection.
+
+```
+# To stage the knowledge cores
+
+tg-put-kg-core --id urn:customers1 -i urn-customers1.core
+tg-put-kg-core --id urn:products1 -i urn-products1.core
+
+# To make the knowledge cores live within a collection
+
+tg-load-kg-core -i urn:customers1 --collection customers
+tg-load-kg-core -i urn:products1 --collection products
+```
